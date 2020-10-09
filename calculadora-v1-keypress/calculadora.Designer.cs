@@ -48,6 +48,8 @@
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(108, 35);
             this.txtNumero1.TabIndex = 0;
+            this.txtNumero1.TextChanged += new System.EventHandler(this.txtNumero1_TextChanged);
+            this.txtNumero1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero1_KeyPress);
             // 
             // txtNumero2
             // 

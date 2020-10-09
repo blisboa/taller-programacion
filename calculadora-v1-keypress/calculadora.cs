@@ -103,5 +103,34 @@ namespace calculadora03
             // El metodo ToString() nos permite convertir a string el contenido de uan variable diferente a strin (numeros)
             txtResultado.Text = Resultado.ToString();
         }
+
+        private void txtNumero1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                //MessageBox.Show("presiono enter");
+                txtNumero2.Focus();
+            }
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan, asignado true al Handled
+                e.Handled = true;
+            }
+        }
+
+        private void txtNumero1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
