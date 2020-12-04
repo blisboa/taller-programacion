@@ -32,8 +32,6 @@
             this.cmbPrioridad = new System.Windows.Forms.ComboBox();
             this.lblTipoRequerimiento = new System.Windows.Forms.Label();
             this.lblPrioridad = new System.Windows.Forms.Label();
-            this.chkResueltos = new System.Windows.Forms.CheckBox();
-            this.chkPendientes = new System.Windows.Forms.CheckBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvRequeriminetos = new System.Windows.Forms.DataGridView();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -79,31 +77,9 @@
             this.lblPrioridad.TabIndex = 3;
             this.lblPrioridad.Text = "Prioridad";
             // 
-            // chkResueltos
-            // 
-            this.chkResueltos.AutoSize = true;
-            this.chkResueltos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkResueltos.Location = new System.Drawing.Point(163, 124);
-            this.chkResueltos.Name = "chkResueltos";
-            this.chkResueltos.Size = new System.Drawing.Size(73, 17);
-            this.chkResueltos.TabIndex = 4;
-            this.chkResueltos.Text = "Resueltos";
-            this.chkResueltos.UseVisualStyleBackColor = true;
-            // 
-            // chkPendientes
-            // 
-            this.chkPendientes.AutoSize = true;
-            this.chkPendientes.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkPendientes.Location = new System.Drawing.Point(46, 124);
-            this.chkPendientes.Name = "chkPendientes";
-            this.chkPendientes.Size = new System.Drawing.Size(79, 17);
-            this.chkPendientes.TabIndex = 5;
-            this.chkPendientes.Text = "Pendientes";
-            this.chkPendientes.UseVisualStyleBackColor = true;
-            // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(300, 124);
+            this.btnBuscar.Location = new System.Drawing.Point(300, 123);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 6;
@@ -140,7 +116,7 @@
             // 
             this.rbtPendiente.AutoSize = true;
             this.rbtPendiente.Checked = true;
-            this.rbtPendiente.Location = new System.Drawing.Point(58, 148);
+            this.rbtPendiente.Location = new System.Drawing.Point(49, 126);
             this.rbtPendiente.Name = "rbtPendiente";
             this.rbtPendiente.Size = new System.Drawing.Size(78, 17);
             this.rbtPendiente.TabIndex = 10;
@@ -151,7 +127,7 @@
             // rbtResuelto
             // 
             this.rbtResuelto.AutoSize = true;
-            this.rbtResuelto.Location = new System.Drawing.Point(158, 147);
+            this.rbtResuelto.Location = new System.Drawing.Point(163, 123);
             this.rbtResuelto.Name = "rbtResuelto";
             this.rbtResuelto.Size = new System.Drawing.Size(72, 17);
             this.rbtResuelto.TabIndex = 11;
@@ -169,8 +145,6 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.dgvRequeriminetos);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.chkPendientes);
-            this.Controls.Add(this.chkResueltos);
             this.Controls.Add(this.lblPrioridad);
             this.Controls.Add(this.lblTipoRequerimiento);
             this.Controls.Add(this.cmbPrioridad);
@@ -190,8 +164,6 @@
         private System.Windows.Forms.ComboBox cmbPrioridad;
         private System.Windows.Forms.Label lblTipoRequerimiento;
         private System.Windows.Forms.Label lblPrioridad;
-        private System.Windows.Forms.CheckBox chkResueltos;
-        private System.Windows.Forms.CheckBox chkPendientes;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvRequeriminetos;
         private System.Windows.Forms.Label lblUsuario;

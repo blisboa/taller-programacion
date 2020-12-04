@@ -56,6 +56,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(122, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "blisboa";
             // 
             // txtClave
             // 
@@ -63,6 +64,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(122, 20);
             this.txtClave.TabIndex = 2;
+            this.txtClave.Text = "123456";
             this.txtClave.UseSystemPasswordChar = true;
             // 
             // lblUsuario

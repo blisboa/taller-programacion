@@ -28,5 +28,12 @@ namespace sistema_gestion_requerimientos
         {
             txtUsuario.Text = this.Tag.ToString() ;
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            frmIngresar frmIngresarReq = new frmIngresar();
+            frmIngresarReq.Tag = this.Tag; // pasando el usuairo conectado al fromulario de Consulta
+            frmIngresarReq.ShowDialog();
+        }
     }
 }

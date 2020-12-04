@@ -29,6 +29,9 @@ namespace sistema_gestion_requerimientos
             else // significa que esta seleccionado el radio buton Resuelto
                 EstadoSeleccionado = "R";
 
+            string tipoRequerimiento = cmbTipoRequerimiento.SelectedValue.ToString();
+            string tipoPrioridad = cmbPrioridad.SelectedValue.ToString();
+
 
             // Aqui nos conectaresmo a la base y validar el usuario y clave
             // establecer la conecion
@@ -44,6 +47,9 @@ namespace sistema_gestion_requerimientos
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.Parameters.AddWithValue("@NickUsuario", txtUsuario.Text);
             sqlCmd.Parameters.AddWithValue("@estado", EstadoSeleccionado);
+            sqlCmd.Parameters.AddWithValue("@tipoReq", tipoRequerimiento);
+            sqlCmd.Parameters.AddWithValue("@tipoPrioridad", tipoPrioridad);
+
             SqlDataAdapter sqlSda = new SqlDataAdapter(sqlCmd);
             DataTable dtData = new DataTable();
             sqlSda.Fill(dtData);
@@ -61,16 +67,24 @@ namespace sistema_gestion_requerimientos
             txtUsuario.Text = this.Tag.ToString(); // En la variable TAG tenemso almacenado el usuario conectados
 
             // agregar opcines al combox de tipos de requerimientos
-            cmbTipoRequerimiento.Items.Insert(0, "Base de datos");
-            cmbTipoRequerimiento.Items.Insert(1, "Sistemas");
-            cmbTipoRequerimiento.Items.Insert(2, "Servidores");
 
-            // agregar opcines al combox de Prioridades
-            cmbPrioridad.Items.Insert(0, "Alta");
-            cmbPrioridad.Items.Insert(1, "Media");
-            cmbPrioridad.Items.Insert(2, "Baja");
-            
+            cmbTipoRequerimiento.DisplayMember = "Text";
+            cmbTipoRequerimiento.ValueMember = "Value";
+            var itemsReq = new[] {
+            new { Text = "Instalar Software", Value = "1" },
+            new { Text = "Formatear computador", Value = "2" },
+            new { Text = "Desbloquear usuario ", Value = "3" },
+            };
+            cmbTipoRequerimiento.DataSource = itemsReq;
 
+            cmbPrioridad.DisplayMember = "Text";
+            cmbPrioridad.ValueMember = "Value";
+            var items = new[] {
+            new { Text = "Alta", Value = "1" },
+            new { Text = "Media", Value = "2" },
+            new { Text = "Baja", Value = "3" },
+            };
+            cmbPrioridad.DataSource = items;
         }
     }
 }
